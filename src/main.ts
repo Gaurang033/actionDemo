@@ -1,5 +1,5 @@
-import core from '@actions/core'
-import github from '@actions/github'
+import * as core from '@actions/core'
+import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
@@ -10,9 +10,9 @@ async function run(): Promise<void> {
       throw new Error('Event payload missing `pull_request`')
     }
 
-    // for (const key in pr) {
-    //   // console.log(key)
-    // }
+    for (const key in pr) {
+      console.log(key)
+    }
 
     // const client = new github.GitHub(token)
   } catch (error) {
