@@ -11,9 +11,9 @@ async function run(): Promise<void> {
       throw new Error('Event payload missing `pull_request`')
     }
 
-    for (const key in pr) {
-      core.info(key)
-    }
+    // for (const key in pr) {
+    //   core.info(key)
+    // }
 
     core.info("------------------------")
     for(const commit in pr.commits){
