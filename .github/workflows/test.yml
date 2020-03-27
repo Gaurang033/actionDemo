@@ -10,11 +10,11 @@ jobs:
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-    - uses: Gaurang033/actionDemo@v1.4
+    - uses: Gaurang033/actionDemo@v1.5
     - run: |
         npm install
         npm run all
   test: # make sure the action works on a clean machine without building
     runs-on: ubuntu-latest
     steps:
-    - uses: Gaurang033/actionDemo@v1.4
+    - uses: Gaurang033/actionDemo@v1.5
