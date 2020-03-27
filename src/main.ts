@@ -1,5 +1,4 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
@@ -13,8 +12,6 @@ async function run(): Promise<void> {
     for (let key in pr) {
       console.log(key);
     }
-
-
     const client = new github.GitHub(token);
 
   } catch (error) {
