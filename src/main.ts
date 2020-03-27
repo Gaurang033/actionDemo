@@ -3,8 +3,9 @@ import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   core.debug("should not fail")
+  core.info("hello world info message")
   try {
-    const token = core.getInput('github-token', {required: true})
+    // const token = core.getInput('github-token', {required: true})
 
     const {pull_request: pr} = github.context.payload
     if (!pr) {
