@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import * as github from '@actions/github'
 
 async function run(): Promise<void> {
-  core.info('info message')
+  core.info('-------------- info message -----------')
   try {
     // const token = core.getInput('github-token', {required: true})
 
