@@ -1,6 +1,6 @@
 {
-  "name": "typescript-action",
-  "version": "0.0.1",
+  "name": "actiondemo",
+  "version": "1.7.0",
   "private": true,
   "description": "Validates that your pull request should have max 1 commit",
   "main": "lib/main.js",
