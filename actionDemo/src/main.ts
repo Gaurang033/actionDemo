@@ -1,7 +1,7 @@
 import core from '@actions/core'
 import github from '@actions/github'
 
-async function run(): Promise<void> {
+async function run(): {
   try {
     // const token = core.getInput('github-token', {required: true})
 
@@ -10,9 +10,9 @@ async function run(): Promise<void> {
       throw new Error('Event payload missing `pull_request`')
     }
 
-    // for (const key in pr) {
-    //   // console.log(key)
-    // }
+    for (const key in pr) {
+      console.log(key)
+    }
 
     // const client = new github.GitHub(token)
   } catch (error) {
