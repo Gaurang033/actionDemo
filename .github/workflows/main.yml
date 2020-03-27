@@ -1,4 +1,4 @@
-on: [push]
+on: [pull_request]
 
 jobs:
   hello_world_job:
@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Test Action 
       id: test_custom_action
-      uses: Gaurang033/actionDemo@v1.6
+      uses: Gaurang033/actionDemo@v0.6
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "Hello World"

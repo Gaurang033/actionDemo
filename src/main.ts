@@ -15,6 +15,12 @@ async function run(): Promise<void> {
       core.info(key)
     }
 
+    core.info("------------------------")
+    for(const commit in pr.commits){
+      core.info(commit)
+    }
+
+    core.info(pr.commits.length)
     // const client = new github.GitHub(token)
   } catch (error) {
     core.setFailed(error.message)
