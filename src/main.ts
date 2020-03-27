@@ -1,7 +1,8 @@
 import * as core from '@actions/core'
 import * as github from '@actions/github'
 
-async function run(): {
+async function run(): Promise<void> {
+  core.info('info message')
   try {
     // const token = core.getInput('github-token', {required: true})
 
@@ -11,7 +12,7 @@ async function run(): {
     }
 
     for (const key in pr) {
-      console.log(key)
+      core.info(key)
     }
 
     // const client = new github.GitHub(token)
