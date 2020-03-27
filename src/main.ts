@@ -1,16 +1,22 @@
 import * as core from '@actions/core'
-import {wait} from './wait'
+import * as github from '@actions/github'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
+    // const token = core.getInput('github-token', {required: true})
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+    const {pull_request: pr} = github.context.payload
+    if (!pr) {
+      throw new Error('Event payload missing `pull_request`')
+    }
 
-    core.setOutput('time', new Date().toTimeString())
+    core.info(`total number of commits are: ${pr['commits']}`)
+    if (pr['commits'] > 1) {
+      core.setFailed(
+        'total number of commits are greater than 1, please squash your commits'
+      )
+    }
+    // const client = new github.GitHub(token)
   } catch (error) {
     core.setFailed(error.message)
   }
