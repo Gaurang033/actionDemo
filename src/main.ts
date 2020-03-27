@@ -3,14 +3,20 @@ import {wait} from './wait'
 
 async function run(): Promise<void> {
   try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
+    const token = core.getInput("github-token", { required: true });
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+    const { pull_request: pr } = github.context.payload;
+    if (!pr) {
+      throw new Error("Event payload missing `pull_request`");
+    }
 
-    core.setOutput('time', new Date().toTimeString())
+    for (let key in pr) {
+      console.log(key);
+    }
+
+
+    const client = new github.GitHub(token);
+
   } catch (error) {
     core.setFailed(error.message)
   }
