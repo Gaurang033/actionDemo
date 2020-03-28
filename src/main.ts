@@ -12,8 +12,10 @@ async function run(): Promise<void> {
     }
 
     core.info('total number of commits are: ${pr["commits"]}')
-    if(pr["commits"] > 1){
-      core.setFailed("total number of commits are greater than 1, please squash your commits")
+    if (pr['commits'] > 1) {
+      core.setFailed(
+        'total number of commits are greater than 1, please squash your commits'
+      )
     }
     // const client = new github.GitHub(token)
   } catch (error) {

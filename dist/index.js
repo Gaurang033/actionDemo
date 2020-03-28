@@ -3519,18 +3519,10 @@ function run() {
             if (!pr) {
                 throw new Error('Event payload missing `pull_request`');
             }
-            core.info("type of pr:  ${typeof pr}");
-            core.info("type of commits:  ${typeof pr['commit']}");
-            for (const key in pr) {
-                core.info(key);
-                core.info(pr[key]);
-                core.info('---         ---');
+            core.info('total number of commits are: ${pr["commits"]}');
+            if (pr["commits"] > 1) {
+                core.setFailed("total number of commits are greater than 1, please squash your commits");
             }
-            core.info('------------------------');
-            for (const commit in pr['commits']) {
-                core.info(commit);
-            }
-            core.info(pr.commits.length);
             // const client = new github.GitHub(token)
         }
         catch (error) {
