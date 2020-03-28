@@ -3519,7 +3519,6 @@ function run() {
             if (!pr) {
                 throw new Error('Event payload missing `pull_request`');
             }
-            core.info(pr["commits"]);
             core.info("total number of commits are: ${pr['commits']}");
             if (pr['commits'] > 1) {
                 core.setFailed('total number of commits are greater than 1, please squash your commits');
