@@ -11,7 +11,7 @@ async function run(): Promise<void> {
       throw new Error('Event payload missing `pull_request`')
     }
 
-    core.info('total number of commits are: ${pr["commits"]}')
+    core.info("total number of commits are: ${pr['commits']}")
     if (pr['commits'] > 1) {
       core.setFailed(
         'total number of commits are greater than 1, please squash your commits'
