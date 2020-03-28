@@ -15,8 +15,8 @@ async function run(): Promise<void> {
     //   core.info(key)
     // }
 
-    core.info("------------------------")
-    for(const commit in pr.commits){
+    core.info('------------------------')
+    for (const commit in pr.commits) {
       core.info(commit)
     }
 

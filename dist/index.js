@@ -3512,16 +3512,21 @@ const core = __importStar(__webpack_require__(470));
 const github = __importStar(__webpack_require__(469));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        core.info('info message');
+        core.info('-------------- info message -----------');
         try {
             // const token = core.getInput('github-token', {required: true})
             const { pull_request: pr } = github.context.payload;
             if (!pr) {
                 throw new Error('Event payload missing `pull_request`');
             }
-            for (const key in pr) {
-                core.info(key);
+            // for (const key in pr) {
+            //   core.info(key)
+            // }
+            core.info("------------------------");
+            for (const commit in pr.commits) {
+                core.info(commit);
             }
+            core.info(pr.commits.length);
             // const client = new github.GitHub(token)
         }
         catch (error) {
