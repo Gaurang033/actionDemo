@@ -11,21 +11,7 @@ async function run(): Promise<void> {
       throw new Error('Event payload missing `pull_request`')
     }
 
-    core.info('type of pr:  ${typeof pr}')
-    core.info("type of commits:  ${typeof pr['commit']}")
-
-    for (const key in pr) {
-      core.info(key)
-      core.info(pr[key])
-      core.info('---         ---')
-    }
-
-    core.info('------------------------')
-    for (const commit in pr['commits']) {
-      core.info(commit)
-    }
-
-    core.info(pr.commits.length)
+    core.info('total number of commits are: ${pr["commits"]}')
     // const client = new github.GitHub(token)
   } catch (error) {
     core.setFailed(error.message)
