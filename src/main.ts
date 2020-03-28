@@ -2,7 +2,7 @@ import * as core from '@actions/core'
 import * as github from '@actions/github'
 
 async function run(): Promise<void> {
-  core.info('info message')
+  core.info('-------------- info message -----------')
   try {
     // const token = core.getInput('github-token', {required: true})
 
@@ -11,9 +11,9 @@ async function run(): Promise<void> {
       throw new Error('Event payload missing `pull_request`')
     }
 
-    for (const key in pr) {
-      core.info(key)
-    }
+    // for (const key in pr) {
+    //   core.info(key)
+    // }
 
     core.info("------------------------")
     for(const commit in pr.commits){
