@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Test Action 
       id: test_custom_action
-      uses: Gaurang033/actionDemo@v0.9
+      uses: Gaurang033/actionDemo@v0.11
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "Hello World"
