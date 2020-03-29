@@ -1,12 +1,11 @@
+name: OneCommit
 on: [pull_request]
-
 jobs:
-  hello_world_job:
+  oneCommit:
     runs-on: ubuntu-latest
-    name: A job to test custom action
+    name: restrict commit messages
     steps:
-    - name: Test Action 
-      id: test_custom_action
-      uses: Gaurang033/actionDemo@v1
-      with: 
-        max_commits: 1
+      - uses: actions/checkout@v1
+      - uses: Gaurang033/actionDemo@v0.1      
+        with: 
+          max_commits: 1
