@@ -3512,14 +3512,13 @@ const core = __importStar(__webpack_require__(470));
 const github = __importStar(__webpack_require__(469));
 function run() {
     return __awaiter(this, void 0, void 0, function* () {
-        core.info('-------------- info message -----------');
         try {
             // const token = core.getInput('github-token', {required: true})
             const { pull_request: pr } = github.context.payload;
             if (!pr) {
                 throw new Error('Event payload missing `pull_request`');
             }
-            core.info("total number of commits are: ${pr['commits']}");
+            core.info(`total number of commits are: ${pr["commits"]}`);
             if (pr['commits'] > 1) {
                 core.setFailed('total number of commits are greater than 1, please squash your commits');
             }
