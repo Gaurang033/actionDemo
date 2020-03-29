@@ -1,5 +1,5 @@
 name: 'OneCommit'
-description: 'Checks if pull request has single commit or not'
+description: 'validates the commit message count for pull reqest'
 author: 'Gaurang Shah'
 runs:
   using: 'node12'
