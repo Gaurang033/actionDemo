@@ -6,6 +6,6 @@ jobs:
     name: restrict commit messages
     steps:
       - uses: actions/checkout@v1
-      - uses: Gaurang033/actionDemo@v0.1      
+      - uses: Gaurang033/actionDemo@v1     
         with: 
-          max_commits: 1
+          max_commits: 2
