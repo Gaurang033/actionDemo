@@ -7,7 +7,6 @@ jobs:
     steps:
     - name: Test Action 
       id: test_custom_action
-      uses: Gaurang033/actionDemo@v0.14
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+      uses: Gaurang033/actionDemo@v1
+      with: 
+        max_commits: 1
